@@ -59,6 +59,7 @@ class Stack:
         return result
 
     def isBalance(self):
+        a = self.st
         if self.isEmpty() == False and len(self.st) % 2 == 0:
             a = self.peek()
             while a[0] in self.inv.keys() and a[1] == self.inv[a[0]]:
@@ -87,6 +88,7 @@ class Stack:
                         break
         else:
             result1 = 'СПИСОК ПУСТ ИЛИ НЕЧЕТНОЕ КОЛИЧЕСТВО ЭЛЕМНТОВ'
+        self.st = a
         return print(result1)
 
 
@@ -101,6 +103,9 @@ if __name__ == '__main__':
     new_stack.pop()
     new_stack.pop()
     new_stack.peek()
-    new_stack.isBalance()
     print(new_stack)
     print(new_stack.size())
+    new_stack.isBalance()
+
+
+#  вот такой стэк не удаётся проверить на баланс <<<[([]()()(([[[]]])))]{()}>>>
